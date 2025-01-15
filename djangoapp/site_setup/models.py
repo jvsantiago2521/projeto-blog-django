@@ -11,7 +11,7 @@ class MenuLink(models.Model):
     url_or_path = models.CharField(max_length=2048)
     new_tab = models.BooleanField(default=False)
     site_setup = models.ForeignKey(
-        'SiteSetup', on_delete=models.CASCADE, blank=True, null=True, default=None,
+        'SiteSetup', on_delete=models.CASCADE, blank=True, null=True, default=None, related_name='menu',
     )
 
     def __str__(self):
@@ -38,7 +38,6 @@ class SiteSetup(models.Model):
     )
 
     def save(self, *args, **kwargs):
-
         current_favicon_name = str(self.favicon.name)
         super().save(*args, **kwargs)
         favicon_changed = False
