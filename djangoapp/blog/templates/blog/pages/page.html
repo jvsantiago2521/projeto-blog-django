@@ -4,8 +4,8 @@
   <main class="main-content section-wrapper">
     <div class="section-content-narrow">
       <div class="section-gap">
-        <h1 class="center">A page 😍</h1>
-        <p>Bem vindo ao meu blog! Ele foi desenvolvido utilizando técnologias como Python, HTML, CSS, Docker e Django. Espero que goste de navegar nele!</p>
+        <h1 class="center"> {{ page.title }} </h1>
+        {{ page.content | safe }}
       </div>
     </div>
   </main>
